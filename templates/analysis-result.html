@@ -30,11 +30,15 @@
             <section class="result">
                 <center><div class="result-area">
                     <h2>Processed Data</h2>
-                    <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank">Open Analysis Result</a>
+                    <!-- <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank">Open Analysis Result</a> -->
+                    <!-- <a href="result" target="_blank">Open Analysis Result</a> -->
+                    <div>
+                        {{ result }}
+                    </div>
                     <br>
                     <br>
                     <br>
-                    <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank"><button type="button" class="submit-file" id="analyze-btn">Download Analysis Result</button></a>
+                    <!-- <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank"><button type="button" class="submit-file" id="analyze-btn">Download Analysis Result</button></a> -->
                     <!-- <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank"><input type="button">Download Analysis Result</a> -->
                 </div></center>
             </section>

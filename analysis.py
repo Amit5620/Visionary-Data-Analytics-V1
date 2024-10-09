@@ -7,6 +7,7 @@ def dataset_analysis(file):
     df = pd.read_csv(file)
 
     profile = ProfileReport(df)
-    profile.to_file("static/uploads/output.html")
+    # profile.to_file("static/uploads/output.html")
+    profile_html = profile.to_html()
     
-    return profile
+    return profile_html

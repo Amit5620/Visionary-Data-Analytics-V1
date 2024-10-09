@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask import render_template_string
 from analysis import dataset_analysis
 from preprocessing import data_preprocessing
 from prediction import make_prediction
@@ -17,7 +18,9 @@ def analysis():
     if request.method == 'POST':
         file = request.files['file']
         analysis_result = dataset_analysis(file)
-        return render_template('analysis-result.html', result=analysis_result)
+        
+        return render_template_string(analysis_result)
+        # return render_template('analysis-result.html', result=analysis_result)
     return render_template('analysis.html')
 
 @app.route('/preprocess', methods=['GET', 'POST'])
