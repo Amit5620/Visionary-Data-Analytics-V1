@@ -1,0 +1,116 @@
+/* Index Page Start */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #6a1887;
+    color: #fff;
+    font-size: x-large;
+    padding: 25px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding-top: 10px;
+    /* padding: 0; */
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a:hover {
+    color:lawngreen;
+    transform: scale(0.5) translate(-100%, -100%);
+}
+
+header nav ul li:hover {
+    transform: scale(1.2);
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* .title {
+    margin-bottom: 50px;
+    color: rgb(206, 147, 69);
+} */
+
+.title h1{
+    color: chartreuse;
+    padding: 0px;
+}
+
+.title p{
+    color: aquamarine;
+    font-size: 30px;
+    margin-top: -20px;
+}
+
+h2 {
+    font-size: xx-large;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 89%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature i {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+/* Index Page End */
+
+
+
+
+/* Analysis Page Start */
+
+/* Analysis Page End */
+
+
+/* Preprocessing Page Start */
+
+/* Preprocessing Page End */
+
+
+/* Prediction Page Start */
+
+/* Prediction Page End */

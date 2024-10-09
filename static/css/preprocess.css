@@ -1,0 +1,110 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+main {
+    width: 50%;
+    margin: auto;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-weight: bold;
+    color: #6c5ce7;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-custom {
+    background-color: #36ba87;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bolder;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 20%;
+    padding: 7px;
+    margin-top: 40px;
+}
+
+.btn-custom:hover {
+    background-color: #816be0;
+}
+
+.input-group-text {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h4 {
+    color: #6c5ce7;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 5px rgba(108, 86, 231, 0.5);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-prepend .input-group-text {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.input-group .form-control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+h2 {
+    color: #343a40;
+}
+
+.card {
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.table {
+    margin-top: 20px;
+}

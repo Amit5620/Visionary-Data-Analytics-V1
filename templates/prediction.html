@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis and Prediction</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/prediction.css">
+    <link rel="stylesheet" href="../static/css/analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      .prediction{
+          color: limegreen;
+          font-size: 30px;
+      }
+  </style>
+  </head>
+<body>
+    <header>
+        <section class="title">
+          <h1>Visionary Data Analytics</h1>
+          <p>Empowering your vision through advanced data analytics.</p>
+          <p>Welcome to our data analysis and prediction platform!</p>
+        </section>
+        <nav>
+            <ul>
+              <li><a href="{{ url_for('index') }}" class="home">Home</a></li>
+              <li><a href="{{ url_for('analysis') }}" class="analysis">Dataset Analysis</a></li>
+              <li><a href="{{ url_for('preprocess') }}" class="preprocess">Data Preprocessing</a></li>
+              <li><a href="{{ url_for('prediction') }}" class="prediction">Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       
+        <div class="container mt-5">
+            <div class="card shadow-lg p-4">
+              <h2 class="text-center text-primary mb-4">Prediction using Machine Learning</h2>
+              <form method="POST" action="/prediction" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="dataset-upload">Upload Dataset</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-file-csv"></i></span>
+                    </div>
+                    <input type="file" class="form-control" id="dataset-upload" name="dataset-upload" required>
+                  </div>
+                </div>
+          
+                <div class="form-group">
+                  <label for="prediction-column">Prediction Column Name</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-columns"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="prediction-column" name="prediction-column" placeholder="Enter column name" required>
+                  </div>
+                </div>
+          
+                <div class="form-group">
+                  <label>Select the Problem Type</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="regression" name="problem-type" value="regression">
+                    <label class="form-check-label" for="regression">Regression Type Problem</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="classification" name="problem-type" value="classification">
+                    <label class="form-check-label" for="classification">Classification Type Problem</label>
+                  </div>
+                </div>
+          
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-lg mt-3">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
+
+        

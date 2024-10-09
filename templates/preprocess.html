@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis and Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/preprocess.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .preprocess{
+            color: limegreen;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="title">
+            <h1>Visionary Data Analytics</h1>
+            <p>Empowering your vision through advanced data analytics.</p>
+            <p>Welcome to our data analysis and prediction platform!</p>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="home">Home</a></li>
+                <li><a href="{{ url_for('analysis') }}" class="analysis">Dataset Analysis</a></li>
+                <li><a href="{{ url_for('preprocess') }}" class="preprocess">Data Preprocessing</a></li>
+                <li><a href="{{ url_for('prediction') }}" class="prediction">Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Data Processing Form</h2>
+            <form method="POST" action="/preprocess" enctype="multipart/form-data">
+                <!-- Dataset Upload -->
+                <div class="form-section">
+                    <h4>1. Upload Dataset</h4>
+                    <div class="form-group">
+                        <label for="dataset">Dataset (CSV)</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-file-csv"></i></span>
+                            </div>
+                            <input type="file" class="form-control" id="dataset" name="dataset" required>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Prediction Column -->
+                <div class="form-section">
+                    <h4>2. Prediction Column</h4>
+                    <div class="form-group">
+                        <label for="prediction-column">Enter Prediction Column Name</label>
+                        <input type="text" class="form-control" id="prediction-column" name="prediction-column" placeholder="Column name" required>
+                    </div>
+                </div>
+    
+                <!-- Data Cleaning (Numerical Features) -->
+                <div class="form-section">
+                    <h4>3. Data Cleaning (Numerical Features)</h4>
+                    <div class="form-group">
+                        <label for="cleaning-numerical">Cleaning Method</label>
+                        <select class="form-control" id="cleaning-numerical" name="cleaning-numerical">
+                            <option value="remove">Remove Row</option>
+                            <option value="constant">Constant Imputation</option>
+                            <option value="mean">Mean Imputation</option>
+                            <option value="median">Median Imputation</option>
+                            <option value="mode">Mode Imputation</option>
+                            <option value="knn">KNN Imputation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cleaning-numerical-columns">Columns for Numerical Cleaning</label>
+                        <input type="text" class="form-control" id="cleaning-numerical-columns" name="cleaning-numerical-columns" placeholder="e.g., age,income">
+                    </div>
+                </div>
+    
+                <!-- Data Cleaning (Categorical Features) -->
+                <div class="form-section">
+                    <h4>4. Data Cleaning (Categorical Features)</h4>
+                    <div class="form-group">
+                        <label for="cleaning-categorical">Cleaning Method</label>
+                        <select class="form-control" id="cleaning-categorical" name="cleaning-categorical">
+                            <option value="remove">Remove Row</option>
+                            <option value="constant">Constant Imputation</option>
+                            <option value="mode">Mode Imputation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cleaning-categorical-columns">Columns for Categorical Cleaning</label>
+                        <input type="text" class="form-control" id="cleaning-categorical-columns" name="cleaning-categorical-columns" placeholder="e.g., city">
+                    </div>
+                </div>
+    
+                <!-- Outlier Removal (Numerical Features) -->
+                <div class="form-section">
+                    <h4>5. Outlier Removal (Numerical Features)</h4>
+                    <div class="form-group">
+                        <label for="outlier-removal">Outlier Removal Method</label>
+                        <select class="form-control" id="outlier-removal" name="outlier-removal">
+                            <option value="iqr">IQR Method</option>
+                            <option value="zscore">Z-Score Method</option>
+                            <option value="modified-zscore">Modified Z-Score Method</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="outlier-removal-columns">Columns for Outlier Removal</label>
+                        <input type="text" class="form-control" id="outlier-removal-columns" name="outlier-removal-columns" placeholder="e.g., age,income">
+                    </div>
+                </div>
+    
+                <!-- Data Transformation (Numerical Features) -->
+                <div class="form-section">
+                    <h4>6. Data Transformation (Numerical Features)</h4>
+                    <div class="form-group">
+                        <label for="transformation-numerical">Transformation Method</label>
+                        <select class="form-control" id="transformation-numerical" name="transformation-numerical">
+                            <option value="log">Log Transformation</option>
+                            <option value="box-cox">Box-Cox Transformation</option>
+                            <option value="yeo-johnson">Yeo-Johnson Transformation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transformation-numerical-columns">Columns for Numerical Transformation</label>
+                        <input type="text" class="form-control" id="transformation-numerical-columns" name="transformation-numerical-columns" placeholder="e.g., age,income">
+                    </div>
+                </div>
+    
+                <!-- Data Normalization (Numerical Features) -->
+                <div class="form-section">
+                    <h4>7. Data Normalization (Numerical Features)</h4>
+                    <div class="form-group">
+                        <label for="normalization-numerical">Normalization Method</label>
+                        <select class="form-control" id="normalization-numerical" name="normalization-numerical">
+                            <option value="min-max">Min-Max Scaling</option>
+                            <option value="z-score">Z-Score Normalization (Standardization)</option>
+                            <option value="max-abs">Max Absolute Scaling</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="normalization-numerical-columns">Columns for Normalization</label>
+                        <input type="text" class="form-control" id="normalization-numerical-columns" name="normalization-numerical-columns" placeholder="e.g., age,income">
+                    </div>
+                </div>
+    
+                <!-- Data Encoding (Categorical Features) -->
+                <div class="form-section">
+                    <h4>8. Data Encoding (Categorical Features)</h4>
+                    <div class="form-group">
+                        <label for="encoding-categorical">Encoding Method</label>
+                        <select class="form-control" id="encoding-categorical" name="encoding-categorical">
+                            <option value="ohe">One-Hot Encoding (OHE)</option>
+                            <option value="label">Label Encoding</option>
+                            <option value="ordinal">Ordinal Encoding</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="encoding-categorical-columns">Columns for Encoding</label>
+                        <input type="text" class="form-control" id="encoding-categorical-columns" name="encoding-categorical-columns" placeholder="e.g., city">
+                    </div>
+                </div>
+    
+                <!-- Data Transformation (Categorical Features) -->
+                <div class="form-section">
+                    <h4>9. Data Transformation (Categorical Features)</h4>
+                    <div class="form-group">
+                        <label for="transformation-categorical">Transformation Method</label>
+                        <select class="form-control" id="transformation-categorical" name="transformation-categorical">
+                            <option value="binary">Binary Encoding</option>
+                            <option value="embeddings">Embeddings</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transformation-categorical-columns">Columns for Categorical Transformation</label>
+                        <input type="text" class="form-control" id="transformation-categorical-columns" name="transformation-categorical-columns" placeholder="e.g., city">
+                    </div>
+                </div>
+    
+                <!-- Feature Selection -->
+                <div class="form-section">
+                    <h4>10. Feature Selection</h4>
+                    <div class="form-group">
+                        <label for="feature-selection">Feature Selection Method</label>
+                        <select class="form-control" id="feature-selection" name="feature-selection">
+                            <option value="genetic-algorithm">Genetic Algorithm</option>
+                            <option value="permutation">Permutation</option>
+                            <option value="xai">XAI (Explainable AI)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature-selection-columns">Columns for Feature Selection</label>
+                        <input type="text" class="form-control" id="feature-selection-columns" name="feature-selection-columns" placeholder="e.g., age,income,city">
+                    </div>
+                </div>
+    
+                <!-- Submit Button -->
+                <div class="form-section text-center">
+                    <button type="submit" class="btn-custom">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

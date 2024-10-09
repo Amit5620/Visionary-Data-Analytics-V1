@@ -1,0 +1,91 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.upload-area {
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 89%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-area i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+.file {
+    font-size: larger;
+}
+
+form {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    width: 80%;
+    height: 40px;
+    background-color: #85188c;
+    color: #fff;
+    font-size: large;
+    padding: 10px;
+    border: solid blueviolet 2px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #4893d5;
+    transform: scale(1.1);
+}
+
+.result-area {
+    background-color: #fff;
+    padding: 40px;
+    padding-bottom: 40px;
+    margin: 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: 40%;
+}
+
+.result-area h2{
+    margin: 20px;
+}
+
+button {
+    width: 40%;
+    height: 40px;
+    background-color: #85188c;
+    color: #fff;
+    font-size: large;
+    padding: 10px;
+    border: solid blueviolet 2px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4893d5;
+    transform: scale(1.1);
+}

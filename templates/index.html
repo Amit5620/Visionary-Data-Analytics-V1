@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis and Prediction</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .home{
+            color: limegreen;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="title">
+            <h1>Visionary Data Analytics</h1>
+            <p>Empowering your vision through advanced data analytics.</p>
+            <p>Welcome to our data analysis and prediction platform!</p>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="home">Home</a></li>
+                <li><a href="{{ url_for('analysis') }}" class="analysis">Dataset Analysis</a></li>
+                <li><a href="{{ url_for('preprocess') }}" class="preprocess">Data Preprocessing</a></li>
+                <li><a href="{{ url_for('prediction') }}" class="prediction">Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center><h2>Our Features</h2></center>
+
+        <section class="features">
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <a href="{{ url_for('analysis') }}"><h3>Dataset Analysis</h3></a>
+                <p>Analyze your dataset with our powerful tools.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-cogs"></i>
+                <a href="{{ url_for('preprocess') }}"><h3>Data Preprocessing</h3></a>
+                <p>Preprocess your data with our easy-to-use interface.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <a href="{{ url_for('prediction') }}"><h3>Prediction</h3></a>
+                <p>Make predictions with our advanced machine learning algorithms.</p>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</body>
+</html>

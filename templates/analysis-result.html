@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis and Prediction</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <section class="title">
+            <h1>Visionary Data Analytics</h1>
+            <p>Empowering your vision through advanced data analytics.</p>
+            <p>Welcome to our data analysis and prediction platform!</p>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('analysis') }}">Dataset Analysis</a></li>
+                <li><a href="{{ url_for('preprocess') }}">Data Preprocessing</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        {% if result %}
+            <center><h2>Analysis Result</h2></center>
+
+            <section class="result">
+                <center><div class="result-area">
+                    <h2>Processed Data</h2>
+                    <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank">Open Analysis Result</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank"><button type="button" class="submit-file" id="analyze-btn">Download Analysis Result</button></a>
+                    <!-- <a href="{{ url_for('static', filename='uploads/output.html') }}" target="_blank"><input type="button">Download Analysis Result</a> -->
+                </div></center>
+            </section>
+        {% endif %}
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</body>
+</html>
+
+        

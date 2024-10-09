@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis and Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/preprocess.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="title">
+            <h1>Visionary Data Analytics</h1>
+            <p>Empowering your vision through advanced data analytics.</p>
+            <p>Welcome to our data analysis and prediction platform!</p>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('analysis') }}">Dataset Analysis</a></li>
+                <li><a href="{{ url_for('preprocess') }}">Data Preprocessing</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Processed Data</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center mt-4">
+                        <a href="{{ url_for('download_file', filename=csv_filename) }}" class="btn btn-success">Download Processed CSV</a>
+                    </div>
+                    <div class="table-responsive">
+                        {{ result|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

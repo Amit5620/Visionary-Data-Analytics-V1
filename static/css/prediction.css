@@ -1,0 +1,131 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .card {
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+ h2 {
+    font-weight: bold;
+    color: #b70ce6;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  label {
+    font-weight:bolder;
+    font-size: 20px;
+    /* padding-top: 40px; */
+  }
+  
+  .input-group-text {
+    background-color: #340266;
+    color: white;
+    border: solid black 2px;
+    font-size: 45px;
+    margin: 30px;
+  }
+  
+  .form-control {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .form-control-file {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .form-check {
+    margin: 10px;
+  }
+  
+  .form-check-input {
+    margin-left: 90px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .form-check-label {
+    font-size: 20px;
+    padding-left: 15px;
+    color:darkorchid;
+  }
+  
+  .btn {
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a623d6;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+  }
+  
+  .card-shadow-lg {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group-prepend {
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="file"] {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  input[type="text"] {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  select {
+    padding: 10px;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
+  .mt-5 {
+    margin-top: 3rem;
+  }
+  
+  .text-primary {
+    color: #a81be4 !important;
+  }
+  
+  .text-center {
+    text-align: center !important;
+  }
